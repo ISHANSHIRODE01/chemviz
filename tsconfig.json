@@ -1,0 +1,75 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/editor.js",
+    "components/preview.js",
+    "components/modals/confirm-modal.js",
+    "app/(learning)/learning/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-title-form.js",
+    "app/(learning)/learning/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-actions.js",
+    "app/(learning)/learning/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-video-form.js",
+    "app/(learning)/learning/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-description-form.js",
+    "app/(learning)/learning/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-access-form.js",
+    "components/banner.js",
+    "app/(learning)/learning/teacher/courses/[courseId]/chapters/[chapterId]/page.js",
+    "app/(learning)/learning/teacher/courses/_components/columns.js",
+    "app/(learning)/learning/teacher/courses/_components/data-table.js",
+    "app/(learning)/learning/search/_components/categories.js",
+    "app/(learning)/learning/search/_components/category-item.js",
+    "app/(learning)/learning/search/page.js",
+    "components/search-input.js",
+    "components/courses-list.tsx",
+    "app/(course)/learning/courses/[courseId]/page.js",
+    "app/(course)/learning/courses/[courseId]/layout.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/page.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/_components/video-player.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/_components/course-progress-button.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/_components/course-enroll-button.js",
+    "app/(course)/learning/courses/[courseId]/page.js",
+    "app/(course)/learning/courses/[courseId]/layout.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/page.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/_components/video-player.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/_components/course-progress-button.js",
+    "app/(course)/learning/courses/[courseId]/chapters/[chapterId]/_components/course-enroll-button.js",
+    "app/(course)/learning/courses/[courseId]/_components/course-sidebar.js",
+    "app/(course)/learning/courses/[courseId]/_components/course-sidebar-item.js",
+    "app/(course)/learning/courses/[courseId]/_components/course-navbar.js",
+    "app/(course)/learning/courses/[courseId]/_components/course-mobile-sidebar.js",
+    "components/navbar-routes.js"
+, "app/(learning)/learning/(root)/_components/banner-card.js", "app/(learning)/learning/(root)/_components/info-card.js", "app/(learning)/learning/teacher/analytics/_components/chart.js", "app/(learning)/learning/teacher/analytics/_components/data-card.js", "app/(learning)/api/courses/[courseId]/attachments/route.js", "app/(learning)/api/courses/[courseId]/attachments/[attachmentId]/route.js", "app/(learning)/api/courses/[courseId]/chapters/route.js", "app/(learning)/api/courses/[courseId]/chapters/reorder/route.js", "app/(learning)/api/courses/[courseId]/chapters/[chapterId]/progress/route.js", "app/(learning)/api/courses/[courseId]/chapters/[chapterId]/publish/route.js", "app/(learning)/api/courses/[courseId]/chapters/[chapterId]/unpublish/route.js", "app/(learning)/api/courses/[courseId]/chapters/[chapterId]/route.js", "app/(learning)/api/courses/[courseId]/checkout/route.js", "app/(learning)/api/courses/[courseId]/publish/route.js", "app/(learning)/api/courses/[courseId]/unpublish/route.js", "app/(learning)/api/courses/[courseId]/route.js", "app/(learning)/api/courses/route.js", "app/(learning)/api/profile/[id]/route.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
