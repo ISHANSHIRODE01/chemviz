@@ -7,6 +7,12 @@ import { db } from "lib/db";
 
 import { createLogging, Logging } from "lib/logging";
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export async function POST(req: Request) {
   const body = await req.text();
   const signature = (await headers()).get("stripe-signature") as string;
