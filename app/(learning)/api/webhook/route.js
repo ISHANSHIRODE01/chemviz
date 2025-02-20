@@ -13,20 +13,20 @@ export const config = {
   },
 };
 
-export async function POST(req: Request) {
+export async function POST(req) {
   const body = await req.text();
-  const signature = (await headers()).get("stripe-signature") as string;
+  const signature = (await headers()).get("stripe-signature");
 
-  let event: Stripe.Event;
+  let event;
 
   try {
     event = stripe.webhooks.constructEvent(
       body,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      process.env.STRIPE_WEBHOOK_SECRET
     )
-  } catch (error: any) {
-    const logging: Logging = {
+  } catch (error) {
+    const logging = {
       url: req.url,
       method: req.method,
       body: body,
@@ -40,13 +40,13 @@ export async function POST(req: Request) {
     return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 })
   }
 
-  const session = event.data.object as Stripe.Checkout.Session;
+  const session = event.data.object;
   const userId = session?.metadata?.userId;
   const courseId = session?.metadata?.courseId;
 
   if (event.type === "checkout.session.completed") {
     if (!userId || !courseId) {
-      const logging: Logging = {
+      const logging = {
         url: req.url,
         method: req.method,
         body: body,
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
       }
     });
   } else {
-    const logging: Logging = {
+    const logging = {
       url: req.url,
       method: req.method,
       body: body,
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
     return new NextResponse(`Webhook Error: Unhandled event type ${event.type}`, { status: 200 })
   }
 
-  const logging: Logging = {
+  const logging = {
     url: req.url,
     method: req.method,
     body: body,
