@@ -323,6 +323,9 @@ export default function Page({ params }) {
                 auto-rotate
                 camera-controls
                 style={{ width: "100%", height: "100%" }}
+                ar
+                touch-action="pan-y"
+                ar-placement="wall"
               ></model-viewer>
             </div>
           </div>
