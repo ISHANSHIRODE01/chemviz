@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { createClient } from "next-sanity";
 import { FaAtom, FaWeightHanging, FaLayerGroup, FaTable } from "react-icons/fa";
 import Image from "next/image";
-import '@google/model-viewer';
+import "@google/model-viewer";
 import { urlFor } from "../../../../sanity/lib/image";
 const sanityClient = createClient({
   projectId: "l13cjbqn", // Replace with your Sanity project ID
@@ -251,8 +251,6 @@ export default function Page({ params }) {
     );
   }
 
-
-
   if (totelems.includes(slug)) {
     return (
       <div className="bg-gray-100 min-h-screen">
@@ -333,8 +331,16 @@ export default function Page({ params }) {
         <div className="container mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-3xl font-bold mb-4">Video</h2>
-            <div className="bg-gray-200 rounded-lg flex items-center justify-center" style={{ height: '560px' }} >
-              <iframe src="https://drive.google.com/file/d/1F6SQtuhnaB0ILG1sMu1cX4LfnquMLn09/preview" width="315" height="560" allow="autoplay"></iframe>
+            <div
+              className="bg-gray-200 rounded-lg flex items-center justify-center"
+              style={{ height: "560px" }}
+            >
+              <iframe
+                src="https://drive.google.com/file/d/1gxh0wMohRuj5zLhpEz6YBGntaDLQrWJN/preview"
+                width="315"
+                height="560"
+                allow="autoplay"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -346,8 +352,9 @@ export default function Page({ params }) {
               {["properties", "uses", "isotopes"].map((tab) => (
                 <button
                   key={tab}
-                  className={`mr-4 px-4 py-2 rounded-lg ${activeTab === tab ? "bg-blue-500 text-white" : "bg-gray-200"
-                    }`}
+                  className={`mr-4 px-4 py-2 rounded-lg ${
+                    activeTab === tab ? "bg-blue-500 text-white" : "bg-gray-200"
+                  }`}
                   onClick={() => handleTabChange(tab)}
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -411,12 +418,14 @@ export default function Page({ params }) {
           <div className="bg-yellow-100 rounded-lg shadow-lg p-8">
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-2">Did You Know?</h3>
-              <p className="text-center">{element.funFacts[currentFactIndex]?.value}</p>
+              <p className="text-center">
+                {element.funFacts[currentFactIndex]?.value}
+              </p>
               <button
                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4"
                 onClick={() => {
-                  setCurrentFactIndex((prevIndex) =>
-                    (prevIndex + 1) % element.funFacts.length
+                  setCurrentFactIndex(
+                    (prevIndex) => (prevIndex + 1) % element.funFacts.length
                   );
                 }}
               >
@@ -465,15 +474,9 @@ export default function Page({ params }) {
         </div>
 
         {/* comments Section */}
-
       </div>
     );
-  }
-  else {
-    return (
-      <div>
-        no elements found
-      </div>
-    );
+  } else {
+    return <div>no elements found</div>;
   }
 }
